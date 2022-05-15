@@ -2,6 +2,7 @@ package canvara.fhir.phr.api.masterdata.controller;
 
 import canvara.fhir.phr.api.masterdata.exception.MasterDataException;
 import canvara.fhir.phr.api.masterdata.service.CoverageMasterDataService;
+import canvara.fhir.phr.api.masterdata.service.InsurancePlanMasterDataService;
 import canvara.fhir.phr.api.masterdata.service.MasterService;
 import canvara.fhir.pojos.constant.MasterDataConstant;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +22,15 @@ public class MasterDataController {
    @Autowired
    private MasterService masterService;
    @Autowired private CoverageMasterDataService coverageMasterDataService;
-
-    @GetMapping(value = "/getOrgType")
-    public ResponseEntity<List<String>> getOrganizationType() {
-        List<String> orgTypes = masterService.getMasterData(MasterDataConstant.ORG_TYPE_KEY);
-        return ResponseEntity.ok(orgTypes);
-    }
+   @Autowired private InsurancePlanMasterDataService insurancePlanMasterDataService;
 
     @GetMapping(value = "/getCoverageMasterData")
-    public ResponseEntity<Map<String, List<String>>> getMasterData() throws MasterDataException {
+    public ResponseEntity<Map<String, List<String>>> getCoverageMasterData() throws MasterDataException {
         return ResponseEntity.ok(coverageMasterDataService.getCoverageMasterData());
+    }
+
+    @GetMapping(value = "/getInsurancePlanMasterData")
+    public ResponseEntity<Map<String, List<String>>> getInsurancePlanMasterData() throws MasterDataException {
+        return ResponseEntity.ok(insurancePlanMasterDataService.getInsurancePLanMasterData());
     }
 }

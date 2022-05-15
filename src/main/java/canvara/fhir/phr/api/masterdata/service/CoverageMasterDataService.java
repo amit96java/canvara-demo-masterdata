@@ -3,6 +3,7 @@ package canvara.fhir.phr.api.masterdata.service;
 import canvara.fhir.phr.api.masterdata.entity.CoverageMasterDetail;
 import canvara.fhir.phr.api.masterdata.exception.MasterDataException;
 import canvara.fhir.phr.api.masterdata.repository.CoverageMasterDataRepository;
+import canvara.fhir.phr.api.masterdata.values.CoverageMasterDataValues;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,10 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static canvara.fhir.phr.api.masterdata.constant.MasterDataConstant.*;
-import static canvara.fhir.phr.api.masterdata.constant.MasterDataConstant.MASTER_DATA_LOAD_SUCCESSFULLY;
-import static canvara.fhir.phr.api.masterdata.values.CoverageMasterDataValues.*;
-import static canvara.fhir.pojos.constant.MasterDataConstant.*;
+import static canvara.fhir.pojos.constant.MasterDataConstant.CoverageKeyConstant.*;
 
 @Service
-public class CoverageMasterDataService {
+public class CoverageMasterDataService extends CoverageMasterDataValues {
     private static final Logger logger = LoggerFactory.getLogger(CoverageMasterDataService.class);
 
     @Autowired
