@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static canvara.fhir.phr.api.masterdata.constant.MasterDataConstant.*;
+import static canvara.fhir.phr.api.masterdata.constant.AppConstant.*;
 import static canvara.fhir.phr.api.masterdata.values.MasterDataValues.*;
 
 @Component
