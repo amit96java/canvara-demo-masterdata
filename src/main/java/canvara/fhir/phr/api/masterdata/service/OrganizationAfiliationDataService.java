@@ -51,7 +51,7 @@ public class OrganizationAfiliationDataService {
         }
     }
 
-    public HashMap<String, List<String>> getInsurancePLanMasterData() throws MasterDataException {
+    public HashMap<String, List<String>> getOrganizationAfiliationMasterData() throws MasterDataException {
         logger.info(OrgAfiliationConstant.RESOURCE_ORG_AFILIATION+" "+MASTER_DATA_LOADING);
         AtomicReference<Boolean> isDataPresent = new AtomicReference<>(true);
 
